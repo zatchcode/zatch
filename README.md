@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zatch Landing (Next.js)
 
-## Getting Started
+Single-page marketing site for Zatch with a waitlist funnel, high-impact hero motion, and neon-on-black brand treatment.
 
-First, run the development server:
+## Tech Stack
+- Next.js 15 (App Router) with TypeScript (strict)
+- Tailwind CSS with custom design tokens
+- Framer Motion for orchestrated hero, parallax, and reveal animations
+- shadcn/ui primitives (button, input, select, toast)
+- next/font (Inter), next/image, and Next metadata utilities
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Local Development
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+   The site runs at http://localhost:3000.
+
+## Scripts
+- `npm run dev` – start the Next.js dev server with Turbopack
+- `npm run build` – create a production build
+- `npm run start` – run the production build locally
+- `npm run lint` – lint the project with ESLint
+
+## Project Structure Highlights
+```
+app/
+  layout.tsx            # Global metadata, shared UI chrome, toasts
+  page.tsx              # Landing page assembly
+  api/subscribe/route.ts# Mock waitlist endpoint
+  robots.txt/route.ts   # Robots policy
+  sitemap/route.ts      # Simple sitemap
+components/
+  BetaForm.tsx          # Waitlist form with validation + toasts
+  Header.tsx, Hero.tsx, NeonWave.tsx, Particles.tsx, Section.tsx, Logo.tsx
+  Toaster.tsx           # Toast context + renderer wrapper
+  ui/…                  # shadcn/ui primitives
+lib/
+  motion.ts             # Framer Motion helpers + reduced-motion utilities
+  utils.ts              # Class helper + email/phone validators
+public/
+  og.png                # Open Graph card
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment (Vercel)
+1. Push the project to a Git repository (GitHub/GitLab/Bitbucket).
+2. Import the repository into Vercel and select the Next.js framework preset.
+3. Vercel automatically installs dependencies, runs `npm run build`, and provisions the production deployment.
+4. Configure the production domain (e.g., `zatch.in`) inside Vercel's dashboard.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Accessibility & Optimisation Notes
+- Prefers-reduced-motion is respected for hero reveals, parallax, and particles.
+- Focus rings are clearly visible on all interactive controls.
+- Waitlist form validates email and Indian mobile numbers client-side and provides toast feedback.
+- Metadata, Open Graph, robots, and sitemap endpoints are configured for SEO and shareability.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Happy launching!
 
-## Learn More
+## Social Launch Assets
 
-To learn more about Next.js, take a look at the following resources:
+### Post 1 – “Something Real Is Coming”
+- **Visual**: Black screen with a subtle neon green pulse (heartbeat monitor blip) and the word “real” slowly fading in and out.
+- **Caption**:
+  ```
+  Shopping feels fake lately, doesn’t it?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  Something real is coming.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  #Zatch #ComingSoon #NotAnotherShoppingApp
+  ```
