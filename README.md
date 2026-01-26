@@ -7,7 +7,14 @@ Single-page marketing site for Zatch with a waitlist funnel, high-impact hero mo
 - Tailwind CSS with custom design tokens
 - Framer Motion for orchestrated hero, parallax, and reveal animations
 - shadcn/ui primitives (button, input, select, toast)
-- next/font (Inter), next/image, and Next metadata utilities
+- Supabase for backend (Postgres, Storage, Auth)
+- Resend for transactional emails
+- Vercel for hosting and deployment
+
+## Key Features
+- **Start Zatching Challenge:** Gamified referral program with countdown timer, discount logic, and leaderboard.
+- **Delete Account:** User-initiated account deletion endpoint with confirmation flow.
+- **Waitlist:** Early access sign-up with phone verification.
 
 ## Local Development
 1. Install dependencies:
@@ -31,17 +38,19 @@ Single-page marketing site for Zatch with a waitlist funnel, high-impact hero mo
 app/
   layout.tsx            # Global metadata, shared UI chrome, toasts
   page.tsx              # Landing page assembly
-  api/subscribe/route.ts# Mock waitlist endpoint
-  robots.txt/route.ts   # Robots policy
-  sitemap/route.ts      # Simple sitemap
+  api/
+    startzatching/      # Challenge endpoints (create, share, logic)
+    admin/              # Admin dashboard endpoints
+    subscribe/          # Waitlist endpoint
 components/
+  StartZatching.tsx     # Challenge countdown and participation UI
+  DeleteAccountSection.tsx # Account deletion form
   BetaForm.tsx          # Waitlist form with validation + toasts
-  Header.tsx, Hero.tsx, NeonWave.tsx, Particles.tsx, Section.tsx, Logo.tsx
-  Toaster.tsx           # Toast context + renderer wrapper
-  ui/…                  # shadcn/ui primitives
+  Header.tsx, Hero.tsx  # Core layout components
 lib/
-  motion.ts             # Framer Motion helpers + reduced-motion utilities
-  utils.ts              # Class helper + email/phone validators
+  supabase/             # Admin client and schema types
+  startzatching/        # Business logic for discounts and referrals
+  email/                # Email templates and sending logic
 public/
   og.png                # Open Graph card
 ```
