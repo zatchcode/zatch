@@ -1,22 +1,25 @@
 import { NextResponse } from 'next/server';
 
 export async function GET(
-    request: Request,
-    { params }: { params: { id: string } }
+  request: Request,
+  context: { params: Promise<{ id: string }> }
 ) {
-    return NextResponse.json({ message: `Get waitlist entry ${params.id}` });
+  const { id } = await context.params
+  return NextResponse.json({ message: `Get waitlist entry ${id}` });
 }
 
 export async function PUT(
-    request: Request,
-    { params }: { params: { id: string } }
+  request: Request,
+  context: { params: Promise<{ id: string }> }
 ) {
-    return NextResponse.json({ message: `Update waitlist entry ${params.id}` });
+  const { id } = await context.params
+  return NextResponse.json({ message: `Update waitlist entry ${id}` });
 }
 
 export async function DELETE(
-    request: Request,
-    { params }: { params: { id: string } }
+  request: Request,
+  context: { params: Promise<{ id: string }> }
 ) {
-    return NextResponse.json({ message: `Delete waitlist entry ${params.id}` });
+  const { id } = await context.params
+  return NextResponse.json({ message: `Delete waitlist entry ${id}` });
 }

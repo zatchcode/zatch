@@ -1,22 +1,25 @@
 import { NextResponse } from 'next/server';
 
 export async function GET(
-    request: Request,
-    { params }: { params: { id: string } }
+  request: Request,
+  context: { params: Promise<{ id: string }> }
 ) {
-    return NextResponse.json({ message: `Get referral ${params.id}` });
+  const { id } = await context.params
+  return NextResponse.json({ message: `Get referral ${id}` });
 }
 
 export async function PUT(
-    request: Request,
-    { params }: { params: { id: string } }
+  request: Request,
+  context: { params: Promise<{ id: string }> }
 ) {
-    return NextResponse.json({ message: `Update referral ${params.id}` });
+  const { id } = await context.params
+  return NextResponse.json({ message: `Update referral ${id}` });
 }
 
 export async function DELETE(
-    request: Request,
-    { params }: { params: { id: string } }
+  request: Request,
+  context: { params: Promise<{ id: string }> }
 ) {
-    return NextResponse.json({ message: `Delete referral ${params.id}` });
+  const { id } = await context.params
+  return NextResponse.json({ message: `Delete referral ${id}` });
 }
