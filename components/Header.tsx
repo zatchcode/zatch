@@ -12,8 +12,12 @@ export function Header() {
     document.getElementById('beta')?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const scrollToDeleteAccount = () => {
+    document.getElementById('delete-account')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+
   return (
-    <motion.header 
+    <motion.header
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-white/5"
       style={{ backgroundColor: `rgba(0, 0, 0, ${headerOpacity})` }}
     >
@@ -25,7 +29,15 @@ export function Header() {
             <a href="#features" className="text-neutral-200 hover:text-white transition-colors">For You</a>
             <a href="#beta" className="text-neutral-200 hover:text-white transition-colors">Waitlist</a>
           </nav>
-          <Button 
+          <Button
+            onClick={scrollToDeleteAccount}
+            variant="ghost"
+            size="sm"
+            className="text-red-400 hover:text-red-300 hover:bg-red-500/10"
+          >
+            Delete Account
+          </Button>
+          <Button
             onClick={scrollToBeta}
             size="sm"
             className="bg-zatch-neon text-black hover:bg-zatch-neon/90 focus-ring font-semibold"
