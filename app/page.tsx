@@ -1,5 +1,6 @@
 'use client'
 
+import { Suspense } from 'react'
 import { motion } from 'framer-motion'
 import { Header } from '@/components/Header'
 import { Hero } from '@/components/Hero'
@@ -25,7 +26,9 @@ export default function Home() {
       <Hero />
       <HowItWorks />
       <BentoGrid />
-      <StartZatching />
+      <Suspense fallback={null}>
+        <StartZatching />
+      </Suspense>
       <Testimonials />
       <FAQ />
       <BetaForm />
