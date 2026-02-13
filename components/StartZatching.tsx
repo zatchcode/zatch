@@ -408,7 +408,7 @@ export function StartZatching() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-neutral-200">
-                        Start Zatching Challenge · Launches 14 Feb 2026
+                        Start Zatching Challenge · Launches 31 Mar 2026
                     </span>
                     <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold">Countdown to the Start Zatching Challenge</h2>
                     <p className="mt-4 text-neutral-200 max-w-2xl mx-auto">

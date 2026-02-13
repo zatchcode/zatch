@@ -1,7 +1,7 @@
 // Start Zatching Challenge Configuration and Logic
 
 // Target launch date: February 14, 2026
-export const STARTZATCHING_TARGET_DATE = new Date('2026-02-14T00:00:00+05:30')
+export const STARTZATCHING_TARGET_DATE = new Date('2026-03-31T00:00:00+05:30')
 
 // Number of referrals needed to unlock order bonuses
 export const STARTZATCHING_REFERRAL_THRESHOLD = 10

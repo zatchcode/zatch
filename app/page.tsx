@@ -11,7 +11,7 @@ import { Testimonials } from '@/components/Testimonials'
 import { FAQ } from '@/components/FAQ'
 import { BetaForm } from '@/components/BetaForm'
 import { Newsletter } from '@/components/Newsletter'
-import { DeleteAccountSection } from '@/components/DeleteAccountSection'
+
 import { rise } from '@/lib/motion'
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
       <FAQ />
       <BetaForm />
       <Newsletter />
-      <DeleteAccountSection />
+
 
       <footer className="py-12 px-6 border-t border-white/5">
         <div className="max-w-4xl mx-auto text-center space-y-3 text-sm text-neutral-200">

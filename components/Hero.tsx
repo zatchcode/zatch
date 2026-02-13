@@ -11,12 +11,12 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-32 pb-20">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-visible pt-32 pb-20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zatch-neon/5 via-transparent to-transparent" />
       <ScrollIndicator />
       
       <motion.div 
-        className="relative z-10 text-center px-6 max-w-7xl mx-auto"
+        className="relative z-10 text-center px-4 sm:px-6 w-full max-w-7xl mx-auto"
         variants={makeStagger(0.2)}
         initial="initial"
         animate="animate"
@@ -30,7 +30,7 @@ export function Hero() {
         </motion.div>
         
         <motion.h1 
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-[1.05] max-w-5xl mx-auto bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-normal leading-[1.15] max-w-[90%] w-full mx-auto bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent pb-2"
           variants={textReveal}
         >
           Shopping. Reinvented.
