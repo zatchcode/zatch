@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSupabaseAdmin } from '@/lib/supabase/admin'
+import { supabaseAdmin } from '@/lib/supabase/admin'
 
 export async function GET() {
-  const supabase = getSupabaseAdmin()
+  const supabase = supabaseAdmin
   const { data, error } = await supabase.from('waitlist_signups').select('*').order('created_at', { ascending: false })
 
   if (error) {
@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: 'Email, phone, and interest are required.' }, { status: 400 })
   }
 
-  const supabase = getSupabaseAdmin()
+  const supabase = supabaseAdmin
   const { data, error } = await supabase
     .from('waitlist_signups')
     .insert({ email, phone, interest })

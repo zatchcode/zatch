@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSupabaseAdmin } from '@/lib/supabase/admin'
+import { supabaseAdmin } from '@/lib/supabase/admin'
 
 const TABLE_NAME = 'waitlist_signups'
 
@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     // Mock delay
     await new Promise(resolve => setTimeout(resolve, 600))
 
-    const supabase = getSupabaseAdmin()
+    const supabase = supabaseAdmin
     const { error } = await supabase
       .from(TABLE_NAME)
       .insert({ email, phone, interest })
@@ -38,9 +38,9 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    return NextResponse.json({ 
-      success: true, 
-      message: "You're on the list! We'll be in touch." 
+    return NextResponse.json({
+      success: true,
+      message: "You're on the list! We'll be in touch."
     })
   } catch (error) {
     return NextResponse.json(

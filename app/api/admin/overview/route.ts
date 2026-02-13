@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server'
-import { getSupabaseAdmin } from '@/lib/supabase/admin'
+import { supabaseAdmin } from '@/lib/supabase/admin'
 
 const LIMIT = 100
 
 export async function GET() {
-  const supabase = getSupabaseAdmin()
+  const supabase = supabaseAdmin
 
   const waitlistPromise = supabase
     .from('waitlist_signups')

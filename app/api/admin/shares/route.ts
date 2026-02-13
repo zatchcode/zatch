@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSupabaseAdmin } from '@/lib/supabase/admin'
+import { supabaseAdmin } from '@/lib/supabase/admin'
 
 export async function GET() {
-  const supabase = getSupabaseAdmin()
+  const supabase = supabaseAdmin
   const { data, error } = await supabase
     .from('startzatching_social_shares')
     .select('*')
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: 'discount_boost must be a number.' }, { status: 400 })
   }
 
-  const supabase = getSupabaseAdmin()
+  const supabase = supabaseAdmin
   const { data, error } = await supabase
     .from('startzatching_social_shares')
     .insert(payload)

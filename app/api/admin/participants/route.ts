@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSupabaseAdmin } from '@/lib/supabase/admin'
+import { supabaseAdmin } from '@/lib/supabase/admin'
 
 const numericFields = [
   'initial_discount',
@@ -25,7 +25,7 @@ function normalizeNumbers(payload: Record<string, any>) {
 }
 
 export async function GET() {
-  const supabase = getSupabaseAdmin()
+  const supabase = supabaseAdmin
   const { data, error } = await supabase
     .from('startzatching_participants')
     .select('*')
@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: (error as Error).message }, { status: 400 })
   }
 
-  const supabase = getSupabaseAdmin()
+  const supabase = supabaseAdmin
   const { data, error } = await supabase
     .from('startzatching_participants')
     .insert(payload)
