@@ -39,6 +39,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center space-y-3 text-sm text-neutral-200">
           <p>Zatch © 2025 | All rights reserved</p>
           <p>Follow us on Instagram @zatch.shop</p>
+          <p className="font-bold">a product of Just Emagine Pvt Ltd</p>
         </div>
       </footer>
     </motion.main>
