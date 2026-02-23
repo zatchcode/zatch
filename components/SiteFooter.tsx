@@ -35,7 +35,13 @@ export function SiteFooter() {
             </p>
             <p className="text-neutral-300 text-sm mb-5">Download the app and experience interactive commerce.</p>
             <Button asChild className="bg-zatch-neon text-black hover:bg-zatch-neon/90 font-semibold">
-              <a href="#final-cta">Download Zatch</a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.zatch.app&pcampaignid=web_share"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Zatch
+              </a>
             </Button>
             <p className="text-xs text-neutral-400 mt-4">App Store | Google Play</p>
           </div>

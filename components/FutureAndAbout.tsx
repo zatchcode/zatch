@@ -23,10 +23,6 @@ const teamMembers = [
 ]
 
 export function FutureAndAbout() {
-  const scrollToBeta = () => {
-    document.getElementById('beta')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   const scrollToSellers = () => {
     document.getElementById('sellers')?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -57,11 +53,17 @@ export function FutureAndAbout() {
           </div>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button
+              asChild
               size="lg"
-              onClick={scrollToBeta}
               className="bg-zatch-neon text-black hover:bg-zatch-neon/90 focus-ring font-semibold px-8"
             >
-              Download Zatch
+              <a
+                href="https://play.google.com/store/apps/details?id=com.zatch.app&pcampaignid=web_share"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Zatch
+              </a>
             </Button>
             <Button
               size="lg"

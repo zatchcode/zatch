@@ -8,10 +8,6 @@ export function Header() {
   const { scrollY } = useScroll()
   const headerOpacity = useTransform(scrollY, [0, 100], [0, 1])
 
-  const scrollToFinalCta = () => {
-    document.getElementById('final-cta')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
 
 
   return (
@@ -31,11 +27,17 @@ export function Header() {
             <a href="#faq" className="text-neutral-200 hover:text-white transition-colors">FAQs</a>
           </nav>
           <Button
-            onClick={scrollToFinalCta}
+            asChild
             size="sm"
             className="bg-zatch-neon text-black hover:bg-zatch-neon/90 focus-ring font-semibold"
           >
-            Download App
+            <a
+              href="https://play.google.com/store/apps/details?id=com.zatch.app&pcampaignid=web_share"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download App
+            </a>
           </Button>
         </div>
       </div>

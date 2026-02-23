@@ -6,10 +6,6 @@ import { ScrollIndicator } from './ScrollIndicator'
 import { textReveal, makeStagger, scaleOnHover } from '@/lib/motion'
 
 export function Hero() {
-  const scrollToFinal = () => {
-    document.getElementById('final-cta')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   const scrollToSellers = () => {
     document.getElementById('sellers')?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -53,16 +49,6 @@ export function Hero() {
         >
           No ads. No algorithm fights. Just real sellers and real deals.
         </motion.p>
-
-        <motion.div
-          variants={textReveal}
-          className="mb-12 max-w-sm mx-auto rounded-2xl border border-white/15 bg-white/5 p-6 text-center"
-        >
-          <p className="text-xs uppercase tracking-[0.25em] text-neutral-300 mb-3">App Download</p>
-          <div className="h-28 rounded-xl border border-dashed border-zatch-neon/60 bg-black/40 flex items-center justify-center text-sm text-neutral-200">
-            QR Code to app download
-          </div>
-        </motion.div>
         
         <motion.div variants={textReveal} className="flex flex-col items-center justify-center gap-4">
           <span className="text-sm uppercase tracking-[0.3em] text-neutral-300">Live. Video-first. Negotiable.</span>
@@ -73,11 +59,17 @@ export function Hero() {
               whileTap="tap"
             >
               <Button
-                onClick={scrollToFinal}
+                asChild
                 size="lg"
                 className="bg-zatch-neon text-black hover:bg-zatch-neon/90 focus-ring font-semibold text-lg px-10 py-6 h-auto rounded-full shadow-2xl shadow-zatch-neon/20"
               >
-                Download Zatch
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.zatch.app&pcampaignid=web_share"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download Zatch
+                </a>
               </Button>
             </motion.div>
             <motion.div
