@@ -25,6 +25,7 @@ export function Header() {
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#about" className="text-neutral-200 hover:text-white transition-colors">About</a>
             <a href="#features" className="text-neutral-200 hover:text-white transition-colors">For You</a>
+            <a href="#details" className="text-neutral-200 hover:text-white transition-colors">Policies</a>
             <a href="#beta" className="text-neutral-200 hover:text-white transition-colors">Waitlist</a>
           </nav>
           <Button

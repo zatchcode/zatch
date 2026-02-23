@@ -11,6 +11,7 @@ import { Testimonials } from '@/components/Testimonials'
 import { FAQ } from '@/components/FAQ'
 import { BetaForm } from '@/components/BetaForm'
 import { Newsletter } from '@/components/Newsletter'
+import { CompanyDetails } from '@/components/CompanyDetails'
 
 import { rise } from '@/lib/motion'
 
@@ -31,6 +32,7 @@ export default function Home() {
       </Suspense>
       <Testimonials />
       <FAQ />
+      <CompanyDetails />
       <BetaForm />
       <Newsletter />
 
