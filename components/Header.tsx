@@ -8,8 +8,8 @@ export function Header() {
   const { scrollY } = useScroll()
   const headerOpacity = useTransform(scrollY, [0, 100], [0, 1])
 
-  const scrollToBeta = () => {
-    document.getElementById('beta')?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToFinalCta = () => {
+    document.getElementById('final-cta')?.scrollIntoView({ behavior: 'smooth' })
   }
 
 
@@ -23,17 +23,19 @@ export function Header() {
         <Logo />
         <div className="flex items-center gap-6">
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#about" className="text-neutral-200 hover:text-white transition-colors">About</a>
-            <a href="#features" className="text-neutral-200 hover:text-white transition-colors">For You</a>
+            <a href="#marketplace" className="text-neutral-200 hover:text-white transition-colors">Marketplace</a>
+            <a href="#buyers" className="text-neutral-200 hover:text-white transition-colors">For Buyers</a>
+            <a href="#sellers" className="text-neutral-200 hover:text-white transition-colors">For Sellers</a>
+            <a href="#trust" className="text-neutral-200 hover:text-white transition-colors">Trust</a>
             <a href="#details" className="text-neutral-200 hover:text-white transition-colors">Policies</a>
-            <a href="#beta" className="text-neutral-200 hover:text-white transition-colors">Waitlist</a>
+            <a href="#faq" className="text-neutral-200 hover:text-white transition-colors">FAQs</a>
           </nav>
           <Button
-            onClick={scrollToBeta}
+            onClick={scrollToFinalCta}
             size="sm"
             className="bg-zatch-neon text-black hover:bg-zatch-neon/90 focus-ring font-semibold"
           >
-            Join Waitlist
+            Download App
           </Button>
         </div>
       </div>

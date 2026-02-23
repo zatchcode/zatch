@@ -12,6 +12,9 @@ import { FAQ } from '@/components/FAQ'
 import { BetaForm } from '@/components/BetaForm'
 import { Newsletter } from '@/components/Newsletter'
 import { CompanyDetails } from '@/components/CompanyDetails'
+import { BuyerSellerFocus } from '@/components/BuyerSellerFocus'
+import { FutureAndAbout } from '@/components/FutureAndAbout'
+import { SiteFooter } from '@/components/SiteFooter'
 
 import { rise } from '@/lib/motion'
 
@@ -27,23 +30,17 @@ export default function Home() {
       <Hero />
       <HowItWorks />
       <BentoGrid />
+      <BuyerSellerFocus />
+      <Testimonials />
+      <FutureAndAbout />
       <Suspense fallback={null}>
         <StartZatching />
       </Suspense>
-      <Testimonials />
       <FAQ />
       <CompanyDetails />
       <BetaForm />
       <Newsletter />
-
-
-      <footer className="py-12 px-6 border-t border-white/5">
-        <div className="max-w-4xl mx-auto text-center space-y-3 text-sm text-neutral-200">
-          <p>Zatch © 2025 | All rights reserved</p>
-          <p>Follow us on Instagram @zatch.shop</p>
-          <p className="font-bold">a product of Just Emagine Pvt Ltd</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </motion.main>
   )
 }

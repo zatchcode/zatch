@@ -5,40 +5,37 @@ import { rise } from '@/lib/motion'
 
 const sections = [
   {
-    heading: 'Why Shop on Zatch',
-    tagline: null,
-    points: [
-      {
-        title: 'Shopping that feels alive.',
-        body: 'Watch, interact, and buy in real time.'
-      },
-      {
-        title: 'Fun and personal.',
-        body: 'Discover products through real people, not static photos.'
-      },
-      {
-        title: 'Instant and effortless.',
-        body: 'One tap to quote, one tap to buy.'
-      }
-    ]
+    heading: '1. Live Shopping',
+    tagline: 'Watch. Ask. Decide.',
+    details: [
+      'See products demonstrated in real time. Interact with sellers instantly. Ask questions before you buy.',
+      'No guessing from images. No waiting for replies. No blind purchases.',
+      'You see it live. You decide with confidence.'
+    ],
+    buyerValue: 'Clarity and trust before payment.',
+    sellerValue: 'Higher conversions through real interaction.'
   },
   {
-    heading: 'Why Sell on Zatch',
-    tagline: 'Your pitch is your power.',
-    points: [
-      {
-        title: 'Build your audience.',
-        body: 'Connect directly with buyers and turn followers into loyal customers.'
-      },
-      {
-        title: 'Fair and simple.',
-        body: 'Low commissions, clear visibility, and full control of your store.'
-      },
-      {
-        title: 'Sell the way you speak.',
-        body: 'Be yourself, sell in your own language, and let your story drive sales.'
-      }
-    ]
+    heading: '2. Buy Bits',
+    tagline: 'Short Video Shopping',
+    details: [
+      'Discover. Scroll. Instantly checkout.',
+      'Products become content. Fast, engaging reels designed to convert.',
+      'Watch quick demos. Understand in seconds. Buy without leaving the video.'
+    ],
+    buyerValue: 'Faster decisions and relevant discovery.',
+    sellerValue: 'More visibility without running ads.'
+  },
+  {
+    heading: '3. Zatching',
+    tagline: 'Strategic Bargaining',
+    details: [
+      'Your price. Your deal.',
+      'Send a quote. Receive approval or counter. Close the deal instantly.',
+      'This is not discount coupons. This is real negotiation.'
+    ],
+    buyerValue: 'Personalized pricing.',
+    sellerValue: 'Flexible pricing control and better margins.'
   }
 ]
 
@@ -52,10 +49,20 @@ export function BentoGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Built for Everyone on the Marketplace
+          Three Ways to Shop. One Powerful Platform.
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <motion.p
+          className="text-neutral-200 text-center max-w-4xl mx-auto mb-12 text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Zatch™ is not just another marketplace. It is a live-powered, video-driven, negotiation-enabled commerce
+          experience built for modern India.
+        </motion.p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {sections.map((section, index) => (
             <motion.div
               key={section.heading}
@@ -64,23 +71,37 @@ export function BentoGrid() {
               whileInView="animate"
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-10 rounded-3xl bg-gradient-to-br from-white/5 via-white/15 to-transparent border border-white/10 shadow-lg shadow-black/10 hover:border-zatch-neon/40 transition-all"
+              className="p-8 rounded-3xl bg-gradient-to-br from-white/5 via-white/15 to-transparent border border-white/10 shadow-lg shadow-black/10 hover:border-zatch-neon/40 transition-all"
             >
               <h3 className="text-2xl md:text-3xl font-semibold text-white mb-4">{section.heading}</h3>
               {section.tagline && (
                 <p className="text-lg text-zatch-neon font-medium mb-6">{section.tagline}</p>
               )}
-              <div className="space-y-6">
-                {section.points.map((point) => (
-                  <div key={point.title}>
-                    <h4 className="text-lg font-semibold text-white mb-2">{point.title}</h4>
-                    <p className="text-neutral-200 leading-relaxed">{point.body}</p>
-                  </div>
+              <div className="space-y-4 mb-6">
+                {section.details.map((detail) => (
+                  <p key={detail} className="text-neutral-200 leading-relaxed">
+                    {detail}
+                  </p>
                 ))}
               </div>
+              <p className="text-sm text-neutral-300 mb-2">
+                <span className="text-white font-semibold">Value to Buyers:</span> {section.buyerValue}
+              </p>
+              <p className="text-sm text-neutral-300">
+                <span className="text-white font-semibold">Value to Sellers:</span> {section.sellerValue}
+              </p>
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          className="text-center text-zatch-neon text-lg md:text-xl font-semibold mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Live. Video. Zatch. This is how commerce evolves.
+        </motion.p>
       </div>
     </section>
   )
